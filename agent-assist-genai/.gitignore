@@ -1,0 +1,6 @@
+
+# Ignore large/raw assets if needed
+*.psd
+*.ai
+*.zip
+*.bak
