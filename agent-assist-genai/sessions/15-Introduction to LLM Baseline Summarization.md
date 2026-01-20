@@ -1,17 +1,11 @@
 # 📝 LLM Baseline Summarization — Premium Notes
 
-> Sleek, GitHub‑ready documentation with image placeholders. This session covers capabilities, business value, configuration highlights, and includes a quiz with the correct answer.
-
 ---
 
 ## 🚀 Module Introduction: LLM Baseline Summarization
 **LLM Baseline Summarization** is an Agent Assist feature that automatically generates a concise summary of a customer conversation. It works for **bot↔human** and **human↔human** dialogs. You can summarize using:
 - A **pre‑trained LLM Baseline Summarization model** (focus of this lesson), or
 - A **custom‑trained summarization model** on your own data (currently in limited preview in some environments).
-
-> *(Insert your intro screenshot below)*
-
-![llm-sum-intro](../screenshots/ADD_LATER.png)
 
 ---
 
@@ -21,10 +15,6 @@
 - Offers configurable **summary sections** (see below) to standardize outputs across teams
 - Designed to **save time**, improve **consistency**, and reduce **after‑call work (ACW)**
 
-> *(Insert capabilities screenshot below)*
-
-![llm-sum-capabilities](../screenshots/ADD_LATER.png)
-
 ---
 
 ## 💼 Business Value (Observed)
@@ -32,10 +22,6 @@ Organizations adopting Baseline Summarization report:
 - ⏱️ **~10× faster** throughput for **unedited** summaries (e.g., 80–100s → **6–10s**)
 - 📝 **3× faster** median time for **edited** summaries (**~25–30s**) vs manual writing
 - 🧰 **Standardized format & tone** across agents → easier QA and reporting
-
-> *(Insert business value screenshot below)*
-
-![llm-sum-business](../screenshots/ADD_LATER.png)
 
 ---
 
@@ -48,10 +34,6 @@ You can mix & match the following predefined sections when configuring the Basel
 4. **Customer satisfaction** — Gauge of sentiment at end of chat (e.g., Satisfied/Unsatisfied).
 5. **Reason for cancellation** — Used when a customer requests cancellation (use N/A otherwise).
 6. **Entities** — Key value‑pairs extracted (product names, timeframes, IDs, etc.).
-
-> *(Insert sections screenshot below)*
-
-![llm-sum-sections](../screenshots/ADD_LATER.png)
 
 ---
 
