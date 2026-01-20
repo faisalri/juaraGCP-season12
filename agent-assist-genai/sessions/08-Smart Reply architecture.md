@@ -68,6 +68,6 @@ It is designed for reliability, scalability, and real‑time performance.
 
 ---
 
-## Screenshot (optional)
+## Architecture flow
 ![Screenshot](../screenshots/08-Smart_Reply_architecture.png)
 
