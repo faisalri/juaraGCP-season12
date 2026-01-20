@@ -1,7 +1,5 @@
 # ⚙️ Smart Reply — **Configuration & Performance Monitoring** (Premium Notes)
 
-> Elegant, structured, and GitHub‑ready documentation. Images will be provided by you—placeholders included.
-
 ---
 
 ## 🧩 Create a **Conversation Profile**
