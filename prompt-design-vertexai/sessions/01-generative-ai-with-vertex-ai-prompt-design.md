@@ -95,3 +95,9 @@ Run the notebook cells for each sub‑section and verify:
 - [ ] You tested at least one **system instruction** that blocks irrelevant answers.
 - [ ] You added **2–3 few‑shot examples** and observed quality gains.
 - [ ] Screenshots saved with correct relative links.
+
+## 📎 Reference Files
+
+- [📄 intro_prompt_design.ipynb](../ref/intro_prompt_design.ipynb)
+- [📄 notebook_template.ipynb](../ref/notebook_template.ipynb)
+``
