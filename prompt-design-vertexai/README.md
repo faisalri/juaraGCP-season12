@@ -9,6 +9,7 @@ Skill badges validate your practical knowledge on specific products through hand
 - `sessions/` — step‑by‑step session files (01‑04)
 - `screenshots/` — image assets per session
 - `diagrams/` — architecture or flow diagrams
+- `ref/` — reference data
 
 ## Badge Scope
 - Prompt engineering concepts

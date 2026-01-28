@@ -12,11 +12,6 @@
 - **Generative AI SDK** for programmatic prompts
 - **Model Garden** for model selection
 
-## Evaluation Tips
-- Create small **golden sets** (5–20 prompts) to test consistency
-- Track **accuracy, completeness, structure adherence**
-- Add **safety rails**: content filters, blocklists, safe‑prompt templates
-
 ## Image & Multimodal
 - Use **grounding** (captions, OCR) and precise **region references**
 - Prefer **step‑by‑step** reasoning cues for complex tasks
