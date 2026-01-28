@@ -16,6 +16,4 @@
 - Use **grounding** (captions, OCR) and precise **region references**
 - Prefer **step‑by‑step** reasoning cues for complex tasks
 
-## Links (fill later)
-- Course link
-- Lab links
+## Quick summary
