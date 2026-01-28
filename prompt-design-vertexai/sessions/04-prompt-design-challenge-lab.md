@@ -44,9 +44,6 @@ Before starting the lab:
   - Google Cloud free trial  
 - The timer **cannot be paused** once the lab starts
 
-📸 Suggested screenshot:  
-`../screenshots/04-lab-start.png`
-
 ---
 
 # 🚀 Task-by-Task Guide
@@ -68,9 +65,6 @@ You will create a prompt in Vertex AI Studio using the `model_1_name` Gemini mod
 5. Save the prompt as:  
    **Cymbal Product Analysis**
 
-📸 Screenshot:  
-`../screenshots/04-task1-image-analysis.png`
-
 ---
 
 ## **Task 2 — Build a Gemini Tagline Generator**
@@ -87,9 +81,6 @@ You will create a customizable tagline generator using the `model_1_name` Gemini
 
 Save the prompt as:  
 **Cymbal Tagline Generator Template**
-
-📸 Screenshot:  
-`../screenshots/04-task2-tagline-generator.png`
 
 ---
 
@@ -110,9 +101,6 @@ Set kernel → **Python 3**.
 - Run all cells  
 - Modify the prompt inside the code to generate more creative descriptions
 
-📸 Screenshot:  
-`../screenshots/04-task3-image-analysis-code.png`
-
 ---
 
 ## **Task 4 — Experiment with Tagline Generation Code**
@@ -132,35 +120,6 @@ Set kernel → **Python 3**.
 - Modify the prompt to include a **specific keyword** (as requested)  
 - Run the updated code and verify new tagline quality
 
-📸 Screenshot:  
-`../screenshots/04-task4-tagline-generator-code.png`
-
----
-
-# ✔️ Quality Checklist
-
-Before submitting:
-
-- [ ] Product Analysis prompt created & saved  
-- [ ] Tagline Generator prompt created & saved  
-- [ ] Image analysis notebook executed successfully  
-- [ ] Tagline code executed with modified keyword prompt  
-- [ ] Checkpoints in the right panel show **100% Completed**  
-- [ ] Screenshots saved using session-specific filenames
-
----
-
-# 🗂 Screenshot Naming (Session 04)
-
-| Area | File Name |
-|------|-----------|
-| Lab Start | `04-lab-start.png` |
-| Task 1 — Image Analysis Prompt | `04-task1-image-analysis.png` |
-| Task 2 — Tagline Generator Prompt | `04-task2-tagline-generator.png` |
-| Task 3 — Image Analysis Code | `04-task3-image-analysis-code.png` |
-| Task 4 — Tagline Generator Code | `04-task4-tagline-generator-code.png` |
-| Completion Screen | `04-lab-completed.png` |
-
 ---
 
 # 📝 Session Summary
@@ -178,7 +137,8 @@ Completing this lab validates your understanding of prompt design and multimodal
 
 ## 📎 Reference Files
 
-(Add these once they exist in your repo)
-
-- [📄 notebook_template_03.ipynb](../ref/notebook_template.ipynb)
-- [📄 notebook_template_03.ipynb](../ref/intro_prompt_design.ipynb)
+- [📄 Cymbal_Tagline_Generator_Template.ipynb](../ref/Cymbal_Tagline_Generator_Template.ipynb)
+- [📄 Cymbal_Product_Analysis.ipynb](../ref/Cymbal_Product_Analysis.ipynb)
+- [📄 image-analysis.ipynb](../ref/image-analysis.ipynb)
+- [📄 notebook_template4.ipynb](../ref/notebook_template4.ipynb)
+- [📄 tagline-generator.ipynb](../ref/tagline-generator.ipynb)
