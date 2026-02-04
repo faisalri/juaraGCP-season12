@@ -10,11 +10,8 @@
 - Use **cURL** to call the **Cloud Storage JSON API**
 - Create a **bucket** and **upload** a file via API
 
-**Screenshots placeholder**  
-`/screenshots/01-01.png` — Lab overview  
-`/screenshots/01-02.png` — Auth section  
-`/screenshots/01-03.png` — Create bucket API result  
-`/screenshots/01-04.png` — Upload object API result  
+**Lab overview**  
+![Lab overview](../screenshots/01-01.png)  
 
 ---
 
@@ -58,7 +55,7 @@ curl -s -X POST   -H "Authorization: Bearer $ACCESS_TOKEN"   -H "Content-Type: a
 ```
 
 **Expected**: a JSON payload containing the new bucket resource (id, name, location, selfLink, timeCreated, etc.).  
-**Screenshot**: `/screenshots/01-03.png`.
+![Create bucket via JSON API](../screenshots/01-05-create-bucket-json-api.png)
 
 ---
 
@@ -86,7 +83,8 @@ EOF
 ```
 
 **Expected**: JSON showing the object metadata (bucket, name, size, contentType, md5Hash, timeCreated).  
-**Screenshot**: `/screenshots/01-04.png`.
+![Upload object via JSON API](../screenshots/01-06-upload-object-json-api.png)
+
 
 ---
 
@@ -94,8 +92,6 @@ EOF
 - Open **Cloud Storage → Buckets** → find `${BUCKET_NAME}`
 - Confirm `hello.txt` exists in the bucket
 - (Optional) Copy the public URL *only if* you’ve configured public access
-
-**Screenshot**: `/screenshots/01-05.png` (bucket listing).
 
 ---
 
@@ -106,20 +102,8 @@ EOF
 
 ---
 
-## 6) Quick Knowledge Check — Correct Answers
-- Bucket names must be globally unique → **True**
-- Object names must be unique **within a bucket** → **True**
-- Retrieve without changing state → **GET**
-- OAuth token location → **Authorization: Bearer <token>** header
-- 200/201/204 → Success (OK / Created / No Content)
-
----
-
-## 7) References (console paths)
+## 6) References (console paths)
 - **Cloud Storage buckets**: Navigation menu → **Cloud Storage** → **Buckets**
 - **API Explorer**: Available per‑API on the REST docs; use for trial requests
 
 ---
-
-## Completion
-All tasks executed and validated in Skills Boost. Attach screenshots later in `/screenshots` and push to repository.
