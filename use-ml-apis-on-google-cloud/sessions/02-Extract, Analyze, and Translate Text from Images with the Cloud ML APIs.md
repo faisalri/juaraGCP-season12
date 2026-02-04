@@ -100,74 +100,187 @@ gsutil cp sign.jpg gs://$BUCKET_NAME
 ### 1️⃣ Create request JSON
 
 ```bash
-cat > vision-request.json <<EOF
 {
   "requests": [
-    {
-      "image": {
-        "source": {
-          "gcsImageUri": "gs://$BUCKET_NAME/sign.jpg"
-        }
-      },
-      "features": [
-        { "type": "TEXT_DETECTION" }
-      ]
-    }
+      {
+        "image": {
+          "source": {
+              "gcsImageUri": "gs://my-bucket-name/sign.jpg"
+          }
+        },
+        "features": [
+          {
+            "type": "TEXT_DETECTION",
+            "maxResults": 10
+          }
+        ]
+      }
   ]
 }
-EOF
 ```
-
-### 2️⃣ Call Vision API
-
-```bash
-curl -s -X POST   -H "Content-Type: application/json"   "https://vision.googleapis.com/v1/images:annotate?key=$API_KEY"   --data-binary @vision-request.json > vision-response.json
-```
-
----
 
 ## 🔹 Task 4 – Extract Detected Text
 
+- In Cloud Shell, call the Cloud Vision API with curl:
 ```bash
-cat vision-response.json | jq '.responses[0].fullTextAnnotation.text'
+curl -s -X POST -H "Content-Type: application/json" --data-binary @ocr-request.json  https://vision.googleapis.com/v1/images:annotate?key=${API_KEY}
+```
+
+- Run the following curl command to save the response to an ocr-response.json file so it can be referenced later
+```bash
+curl -s -X POST -H "Content-Type: application/json" --data-binary @ocr-request.json  https://vision.googleapis.com/v1/images:annotate?key=${API_KEY} -o ocr-response.json
 ```
 
 ---
 
 ## 🔹 Task 5 – Translate Text with Translation API
-
+- First, create a translation-request.json file and add the following to it:
 ```bash
-cat > translate-request.json <<EOF
 {
-  "q": "LE BIEN PUBLIC Pour Obama, la moutarde",
+  "q": "your_text_here",
   "target": "en"
 }
-EOF
 ```
+- Run this Bash command in Cloud Shell to extract the image text from the previous step and copy it into a new translation-request.json (all in one command):
+```bash
+STR=$(jq .responses[0].textAnnotations[0].description ocr-response.json) && STR="${STR//\"}" && sed -i "s|your_text_here|$STR|g" translation-request.json
+```
+- Now you're ready to call the Translation API. This command will also copy the response into a translation-response.json file:
+```bash
+curl -s -X POST -H "Content-Type: application/json" --data-binary @translation-request.json https://translation.googleapis.com/language/translate/v2?key=${API_KEY} -o translation-response.json
+```
+- Run this command to inspect the file with the Translation API response:
+```bash
+cat translation-response.json
+```
+- Now you can understand more of what the sign said!
 
 ```bash
-curl -s -X POST   -H "Content-Type: application/json"   "https://translation.googleapis.com/language/translate/v2?key=$API_KEY"   --data-binary @translate-request.json > translate-response.json
+{
+  "data": {
+    "translations": [
+      {
+        "translatedText": "TO THE PUBLIC GOOD the dispatches For Obama, the mustard is from Dijon",
+        "detectedSourceLanguage": "fr"
+      }
+    ]
+  }
+}
 ```
+In the response:
+
+translatedText contains the resulting translation
+detectedSourceLanguage is fr, the ISO language code for French.
+The Translation API supports 100+ languages, all of which are listed in the [Language support reference](https://cloud.google.com/translate/docs/languages)
+In addition to translating the text from our image, you might want to do more analysis on it. That's where the Natural Language API comes in handy. Onward to the next step!
 
 ---
 
 ## 🔹 Task 6 – Analyze Text with Natural Language API
 
 ```bash
-cat > nl-request.json <<EOF
 {
-  "document": {
-    "type": "PLAIN_TEXT",
-    "content": "LE BIEN PUBLIC Pour Obama, la moutarde"
+  "document":{
+    "type":"PLAIN_TEXT",
+    "content":"your_text_here"
   },
-  "encodingType": "UTF8"
+  "encodingType":"UTF8"
 }
-EOF
 ```
+In the request, you're telling the Natural Language API about the text you're sending:
+
+type: supported type values are PLAIN_TEXT or HTML.
+
+content: pass the text to send to the Natural Language API for analysis. The Natural Language API also supports sending files stored in Cloud Storage for text processing. To send a file from Cloud Storage, replace content with gcsContentUri and use the value of the text file's uri in Cloud Storage.
+
+encodingType: tells the API which type of text encoding to use when processing the text. The API will use this to calculate where specific entities appear in the text.
 
 ```bash
-curl -s -X POST   -H "Content-Type: application/json"   "https://language.googleapis.com/v1/documents:analyzeSentiment?key=$API_KEY"   --data-binary @nl-request.json > nl-response.json
+STR=$(jq .data.translations[0].translatedText  translation-response.json) && STR="${STR//\"}" && sed -i "s|your_text_here|$STR|g" nl-request.json
 ```
+
+The nl-request.json file now contains the translated English text from the original image. Time to analyze it!
+
+```bash
+curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @nl-request.json
+```
+- If you scroll through the response you can see the entities the Natural Language API found:
+```
+{
+  "entities": [
+    {
+      "name": "dispatches",
+      "type": "OTHER",
+      "metadata": {},
+      "salience": 0.3560996,
+      "mentions": [
+        {
+          "text": {
+            "content": "dispatches",
+            "beginOffset": 23
+          },
+          "type": "COMMON"
+        }
+      ]
+    },
+    {
+      "name": "mustard",
+      "type": "OTHER",
+      "metadata": {},
+      "salience": 0.2878307,
+      "mentions": [
+        {
+          "text": {
+            "content": "mustard",
+            "beginOffset": 38
+          },
+          "type": "COMMON"
+        }
+      ]
+    },
+    {
+      "name": "Obama",
+      "type": "PERSON",
+      "metadata": {
+        "mid": "/m/02mjmr",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Barack_Obama"
+      },
+      "salience": 0.16260329,
+      "mentions": [
+        {
+          "text": {
+            "content": "Obama",
+            "beginOffset": 31
+          },
+          "type": "PROPER"
+        }
+      ]
+    },
+    {
+      "name": "Dijon",
+      "type": "LOCATION",
+      "metadata": {
+        "mid": "/m/0pbhz",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Dijon"
+      },
+      "salience": 0.08129317,
+      "mentions": [
+        {
+          "text": {
+            "content": "Dijon",
+            "beginOffset": 54
+          },
+          "type": "PROPER"
+        }
+      ]
+    }
+  ],
+  "language": "en"
+}
+```
+## Congratulations!
+You've learned how to combine 3 different machine learning APIs: the Vision API's OCR method extracted text from an image, then the Translation API translated that text to English and the Natural Language API to found entities in that text. You can use these APIs together to extract meaning from large datasets of images.
 
 ---
 
