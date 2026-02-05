@@ -1,3 +1,11 @@
 .DS_Store
 Thumbs.db
 .vscode/
+# secrets & keys
+*.json
+*.key
+*.p12
+.env
+.env.*
+*.pem
+*.pfx
