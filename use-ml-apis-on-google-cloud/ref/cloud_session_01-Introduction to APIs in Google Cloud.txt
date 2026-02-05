@@ -1,0 +1,69 @@
+Welcome to Cloud Shell! Type "help" to get started, or type "gemini" to try prompting with Gemini CLI.
+Your Cloud Platform project in this session is set to qwiklabs-gcp-00-899e2bb24cc0.
+Use `gcloud config set project [PROJECT_ID]` to change to a different project.
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ gcloud auth list
+Credentialed Accounts
+
+ACTIVE: *
+ACCOUNT: student-03-83965f319e3c@qwiklabs.net
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ gcloud config list project
+[core]
+project = qwiklabs-gcp-00-899e2bb24cc0
+
+Your active configuration is: [cloudshell-16562]
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ gcloud config set compute/region europe-west1 
+Updated property [compute/region].
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ nano values.json
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ cat values.json 
+{  "name": "qwiklabs-gcp-00-899e2bb24cc0-bucket",
+   "location": "us",
+   "storageClass": "multi_regional"
+}
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ ls -l
+total 8
+-rwxr-xr-x 1 student_03_83965f319e3c student_03_83965f319e3c 913 Feb  4 03:06 README-cloudshell.txt
+-rw-rw-r-- 1 student_03_83965f319e3c student_03_83965f319e3c 109 Feb  4 03:16 values.json
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ export OAUTH2_TOKEN="ya29.a0AUMWg_KcMpW4EhC1HZ6rpmm12KAxaUN7Ae7u2pNX2NKfGiNeMlJTG_RCogTlNIcoeCq5U8Wqxi8LBUEkP95pKJ02BdH_dYuuHwZvreh8FOfiqkWEI28aU69wdc7zi5LZSqxi2oCCZdciW21Lzm8eQUSvV0WnyRyZg9uRS7a5zQX99MG8eLRrorB1TI2BIkDx9CIsVTQaCgYKAc8SARYSFQHGX2MiHFOfsFxNN9etKX6KrKWFgQ0206"
+``
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ echo ${OAUTH2_TOKEN:0:20}
+ya29.a0AUMWg_KcMpW4E
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ export PROJECT_ID=$(gcloud config get-value project)
+Your active configuration is: [cloudshell-16562]
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ curl -X POST --data-binary @values.json \
+    -H "Authorization: Bearer $OAUTH2_TOKEN" \
+    -H "Content-Type: application/json" \
+    "https://www.googleapis.com/storage/v1/b?project=$PROJECT_ID"
+{
+  "kind": "storage#bucket",
+  "selfLink": "https://www.googleapis.com/storage/v1/b/qwiklabs-gcp-00-899e2bb24cc0-bucket",
+  "id": "qwiklabs-gcp-00-899e2bb24cc0-bucket",
+  "name": "qwiklabs-gcp-00-899e2bb24cc0-bucket",
+  "projectNumber": "904855803244",
+  "generation": "1770175433832441745",
+  "metageneration": "1",
+  "location": "US",
+  "storageClass": "MULTI_REGIONAL",
+  "etag": "CAE=",
+  "timeCreated": "2026-02-04T03:23:54.152Z",
+  "updated": "2026-02-04T03:23:54.152Z",
+  "softDeletePolicy": {
+    "retentionDurationSeconds": "604800",
+    "effectiveTime": "2026-02-04T03:23:54.152Z"
+  },
+  "iamConfiguration": {
+    "bucketPolicyOnly": {
+      "enabled": false
+    },
+    "uniformBucketLevelAccess": {
+      "enabled": false
+    },
+    "publicAccessPrevention": "inherited"
+  },
+  "locationType": "multi-region",
+  "rpo": "DEFAULT"
+}
+student_03_83965f319e3c@cloudshell:~ (qwiklabs-gcp-00-899e2bb24cc0)$ 

@@ -52,7 +52,7 @@ Cloud Vision API (OCR)
   gcloud config get-value project
   ```
   
-
+![Activate Cloud Shell](../screenshots/02_Activate_Cloud_Shell.png)
 ---
 
 ## 🔹 Task 1 – Create an API Key
@@ -64,6 +64,9 @@ Cloud ML APIs in this lab use **API Key authentication**.
 1. Go to **APIs & Services → Credentials**
 2. Click **Create Credentials → API key**
 3. Copy the generated key
+
+
+![Activate Cloud Shell](../screenshots/02_Activate_Cloud_Shell.png)
 
 ### Set API key as environment variable
 
@@ -90,6 +93,8 @@ gsutil mb gs://$BUCKET_NAME
 ```bash
 gsutil cp sign.jpg gs://$BUCKET_NAME
 ```
+
+![sample_image](../screenshots/02_Upload_the%20sample_image.png)
 
 ✅ **Checkpoint:** Image uploaded to GCS
 
@@ -279,6 +284,8 @@ curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY
   "language": "en"
 }
 ```
+
+![Analyzing the image's](../screenshots/02_Analyzing_the_images.png)
 ## Congratulations!
 You've learned how to combine 3 different machine learning APIs: the Vision API's OCR method extracted text from an image, then the Translation API translated that text to English and the Natural Language API to found entities in that text. You can use these APIs together to extract meaning from large datasets of images.
 
