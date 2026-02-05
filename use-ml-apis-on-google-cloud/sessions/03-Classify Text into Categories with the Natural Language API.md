@@ -115,7 +115,7 @@ Before sending the text to the Natural Language API, you need a place to store t
 - Click Done.
 
 - To create a dataset, click on the View actions icon next to your Project ID and select Create dataset:
-![alt text](image.png)
+![alt text](../screenshots/03_BIGQUERY.png)
 
 - The option 'Create dataset' highlighted within the View actions menu.
 
@@ -129,7 +129,7 @@ Before sending the text to the Natural Language API, you need a place to store t
   - Name your table: article_data
 
 - Under Schema, click Add Field and add the following 3 fields:
-![alt text](image-1.png)
+![alt text](../screenshots/03_TABLE_BIGQUERY.png)
 
 
 - Click Create Table.
