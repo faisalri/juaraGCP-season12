@@ -20,21 +20,13 @@ My goal is to build **consistent Google Cloud skills**, maintain clean documenta
 - **Badge Earned:** ✅ Google Cloud Skill Badge
 - **Folder:** [`agent-assist-genai/`](https://github.com/faisalri/juaraGCP-season12/tree/main/agent-assist-genai)
 
-**Key topics covered:**
+---
 
-- Understanding the role of Agent Assist
-- Gen AI features: summarization, intent detection, sentiment, suggestions
-- Integration using Dialogflow + Vertex AI
-- Contact center AI architecture
+### ✅ 2) Prompt Design in Vertex AI
 
-#### 🧪 Hands‑on / Notes
-
-Inside the folder:
-
-- `notes.md`
-- `sessions/`
-- `diagrams/`
-- `screenshots/`
+- **Status:** ✅ Completed
+- **Badge Earned:** ✅ Google Cloud Skill Badge
+- **Folder:** [`prompt-vertex-ai/`](https://github.com/faisalri/juaraGCP-season12/tree/main/prompt-design-vertexai)
 
 ---
 
