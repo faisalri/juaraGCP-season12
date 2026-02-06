@@ -1,6 +1,4 @@
-# 🧠 Lab Session (Premium)
-
-**Detect Labels, Faces, and Landmarks in Images with the Cloud Vision API**
+## **Detect Labels, Faces, and Landmarks in Images with the Cloud Vision API**
 
 > Google Cloud Skills Boost – Self‑Paced Lab  
 > Level: Intermediate | Duration: ~1 hour
@@ -43,7 +41,7 @@ By completing this session, you will be able to:
 gcloud config get-value project
 ```
 
-✅ Checkpoint: Cloud Shell ready
+![ProjectID](../screenshots/04_ProjectID.png)
 
 ---
 
@@ -59,7 +57,7 @@ Set the API key as an environment variable:
 export API_KEY="YOUR_API_KEY"
 ```
 
-✅ Checkpoint: API key created
+![API](../screenshots/04_GenerateAPI.png)
 
 ---
 
@@ -85,7 +83,7 @@ gsutil cp image.jpg gs://$BUCKET_NAME
 gsutil acl ch -u AllUsers:R gs://$BUCKET_NAME/image.jpg
 ```
 
-✅ Checkpoint: Image uploaded and accessible
+![Public](../screenshots/04_Public_bucket.png)
 
 ---
 
@@ -123,6 +121,8 @@ EOF
 4. Authorize the plugin if necessary. If a project is not automatically selected, click Select a Google Cloud Project, and choose Project ID.
 5. Verify that your Google Cloud project (Project ID) displays in the Cloud Code status message in the status bar.
 
+![Gemini-assist](../screenshots/04_Gemini_assist.png)
+
 ---
 
 ## 🔹 Task 4 – Perform Label Detection
@@ -147,6 +147,8 @@ You are a Machine Learning Engineer at Cymbal AI. A new team member needs help u
 
 For the suggested improvements, don't make any changes to the file's content.
 ```
+
+![detect](../screenshots/04_errorlabel.png)
 
 ---
 
@@ -173,6 +175,8 @@ In the request.json file, update the features list, change type from LABEL_DETEC
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json  https://vision.googleapis.com/v1/images:annotate?key=${API_KEY}
 ```
 7. Dive into the response, starting with webEntities. Here are some of the entities this image returned:
+
+![Web](../screenshots/04_webdetect.png)
 
 ---
 
@@ -210,6 +214,7 @@ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json 
 ```
 2. Take a look at the faceAnnotations object in the response. Notice that the API returns an object for each face found in the image—in this case, three. Here's a clipped version of the response:
 
+![face](../screenshots/04_Face.png)
 
 ## 🔹 Task 7 – Perform Landmark Annotation
 
@@ -247,6 +252,7 @@ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json 
 ```
 2. Look at the landmarkAnnotations part of the response:
 
+![landmark](../screenshots/05_landmark.png)
 
 ---
 

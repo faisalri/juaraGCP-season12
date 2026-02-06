@@ -1,6 +1,4 @@
-# 🧠 Lab Session (Premium)
-
-**Classify Text into Categories with the Natural Language API**
+## **Classify Text into Categories with the Natural Language API**
 
 > Google Cloud Self‑Paced Lab (GSP063)
 > Level: Intermediate | Duration: ~1 hour
