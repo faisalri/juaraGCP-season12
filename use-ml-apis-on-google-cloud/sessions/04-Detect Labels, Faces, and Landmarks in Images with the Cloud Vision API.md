@@ -252,7 +252,7 @@ curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json 
 ```
 2. Look at the landmarkAnnotations part of the response:
 
-![landmark](../screenshots/05_landmark.png)
+![landmark](../screenshots/04_landmark.png)
 
 ---
 
