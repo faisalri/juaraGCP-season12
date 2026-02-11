@@ -1,7 +1,7 @@
 
 # 01 — Why Should You Care About AI Security?
 
-> ⏱️ *Estimated time:* 30 minutes (quizzes ~1 hour)  
+> ⏱️ *Estimated time:* 30 minutes
 > 🎯 *Goal:* Capture key ideas and practical takeaways.
 
 ---
