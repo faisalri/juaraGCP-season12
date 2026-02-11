@@ -30,12 +30,21 @@ My goal is to build **consistent Google Cloud skills**, maintain clean documenta
 
 ---
 
+### ✅ 3) Introduction to Security in the World of AI
+
+- **Status:** ✅ Completed
+- **Badge Earned:** ✅ Google Cloud Skill Badge
+- **Folder:** [`intro-security-in-the-world-of-ai/`](https://github.com/faisalri/juaraGCP-season12/tree/main/intro-security-in-the-world-of-ai)
+
+---
+
 ## 🏅 Badge & Module Tracker
 
 | #   | Module / Skill | Folder | Status | Badge |
 | --- | --- | --- | --- | --- |
 | 1   | Agent Assist and its Gen AI Capabilities | [agent-assist-genai](https://github.com/faisalri/juaraGCP-season12/tree/main/agent-assist-genai) | ✅ Completed | ✅ Earned |
 | 2   | Prompt Design in Vertex AI | [prompt-vertex-ai](https://github.com/faisalri/juaraGCP-season12/tree/main/prompt-design-vertexai) | ✅ Completed | ✅ Earned |
+| 3   | Introduction to Security in the World of AI | [intro-security-in-the-world-of-ai](https://github.com/faisalri/juaraGCP-season12/tree/main/intro-security-in-the-world-of-ai) | ✅ Completed | ✅ Earned |
 
 ---
 
