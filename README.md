@@ -38,6 +38,14 @@ My goal is to build **consistent Google Cloud skills**, maintain clean documenta
 
 ---
 
+### ✅ 4) Use Machine Learning APIs on Google Cloud
+
+- **Status:** ✅ Completed
+- **Badge Earned:** ✅ Google Cloud Skill Badge
+- **Folder:** [`use-ml-apis-on-google-cloud/`](https://github.com/faisalri/juaraGCP-season12/tree/main/use-ml-apis-on-google-cloud)
+
+---
+
 ## 🏅 Badge & Module Tracker
 
 | #   | Module / Skill | Folder | Status | Badge |
@@ -45,12 +53,13 @@ My goal is to build **consistent Google Cloud skills**, maintain clean documenta
 | 1   | Agent Assist and its Gen AI Capabilities | [agent-assist-genai](https://github.com/faisalri/juaraGCP-season12/tree/main/agent-assist-genai) | ✅ Completed | ✅ Earned |
 | 2   | Prompt Design in Vertex AI | [prompt-vertex-ai](https://github.com/faisalri/juaraGCP-season12/tree/main/prompt-design-vertexai) | ✅ Completed | ✅ Earned |
 | 3   | Introduction to Security in the World of AI | [intro-security-in-the-world-of-ai](https://github.com/faisalri/juaraGCP-season12/tree/main/intro-security-in-the-world-of-ai) | ✅ Completed | ✅ Earned |
+| 4   | Use Machine Learning APIs on Google Cloud | [use-ml-apis-on-google-cloud](https://github.com/faisalri/juaraGCP-season12/tree/main/intro-security-in-the-world-of-ai) | ✅ Completed | ✅ Earned |
 
 ---
 
 ## 🛠️ Repository Standards
 
-- Premium Markdown documentation
+- Markdown documentation
 - Structured session files (`sessions/01-*.md`)
 - No credentials or secrets committed
 - All labs reproducible via Cloud Shell
